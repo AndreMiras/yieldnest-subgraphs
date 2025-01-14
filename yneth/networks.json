@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "ynETH": {
+      "address": "0x14DC3d915107DcA9ed39E29E14fbdfe4358a1346",
+      "startBlock": 19839557
+    }
+  }
+}

@@ -1,0 +1,62 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ynETH
+    network: mainnet
+    source:
+      address: "0x14DC3d915107DcA9ed39E29E14fbdfe4358a1346"
+      abi: ynETH
+      startBlock: 19839557
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - Deposit
+        - DepositETHPausedUpdated
+        - ETHWithdrawn
+        - Initialized
+        - PauseWhitelistUpdated
+        - RewardsReceived
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - Transfer
+        - TransfersUnpaused
+        - WithdrawnETHProcessed
+      abis:
+        - name: ynETH
+          file: ./abis/ynETH.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleDeposit
+        - event: DepositETHPausedUpdated(bool)
+          handler: handleDepositETHPausedUpdated
+        - event: ETHWithdrawn(uint256,uint256)
+          handler: handleETHWithdrawn
+        - event: Initialized(uint64)
+          handler: handleInitialized
+        - event: PauseWhitelistUpdated(indexed address,bool)
+          handler: handlePauseWhitelistUpdated
+        - event: RewardsReceived(uint256,uint256)
+          handler: handleRewardsReceived
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: TransfersUnpaused()
+          handler: handleTransfersUnpaused
+        - event: WithdrawnETHProcessed(uint256,uint256)
+          handler: handleWithdrawnETHProcessed
+      file: ./src/yn-eth.ts
