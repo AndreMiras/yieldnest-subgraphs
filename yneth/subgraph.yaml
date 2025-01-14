@@ -8,7 +8,7 @@ dataSources:
     name: ynETH
     network: mainnet
     source:
-      address: "0x14DC3d915107DcA9ed39E29E14fbdfe4358a1346"
+      address: "0x09db87A538BD693E9d08544577d5cCfAA6373A48"
       abi: ynETH
       startBlock: 19839557
     mapping:
