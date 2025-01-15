@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: ./generated/schema.graphql
 dataSources:
   - kind: ethereum
     name: ynETH
@@ -59,4 +59,4 @@ dataSources:
           handler: handleTransfersUnpaused
         - event: WithdrawnETHProcessed(uint256,uint256)
           handler: handleWithdrawnETHProcessed
-      file: ./src/yn-eth.ts
+      file: ./src/index.ts

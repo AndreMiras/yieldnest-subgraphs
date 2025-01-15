@@ -1,0 +1,14 @@
+# Custom metrics entities
+
+type MetricsSnapshot @entity {
+  id: Bytes!
+  totalSupply: BigDecimal!
+  totalAssets: BigDecimal!
+  totalDepositedInPool: BigDecimal!
+  exchangeRate: BigDecimal!
+  marketShare: BigDecimal!
+  trigger: String!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  transactionHash: Bytes!
+}

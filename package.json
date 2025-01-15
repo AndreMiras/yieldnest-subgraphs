@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build:schema": "tsx scripts/build-schema.ts",
+    "build:graph": "npm run build:schema && cd yneth && graph codegen && graph build"
+  },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.94.0"
+    "@graphprotocol/graph-cli": "^0.94.0",
+    "tsx": "^4.19.2"
   }
 }
